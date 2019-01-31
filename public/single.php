@@ -5,4 +5,7 @@ inc([
     'e',
     'view',
 ]);
-controller('index');
+$data=[
+    'var'=>'hello'
+];
+controller('single',$data);
