@@ -1,4 +1,7 @@
 [
     "inc",
-    "view"
+    "view",
+    "e",
+    "segment",
+    "controller"
 ]
