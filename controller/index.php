@@ -2,5 +2,5 @@
 $data=[
     'title'=>"Cisco"
 ];
-view('index',$data);
+view('um',$data);
 ?>
