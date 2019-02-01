@@ -6,6 +6,5 @@
     "controller",
     "model",
     "db",
-    "error",
-    "backup"
+    "error"
 ]
