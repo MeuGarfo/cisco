@@ -4,5 +4,7 @@
     "e",
     "segment",
     "controller",
-    "model"
+    "model",
+    "db",
+    "error"
 ]

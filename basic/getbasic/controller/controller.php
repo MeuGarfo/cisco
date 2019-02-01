@@ -8,8 +8,7 @@ function controller($name,$data=false){
         if(is_array($data)){
             extract($data);
         }
-        require_once($str);
-        return true;
+        return require_once($str);
     }else{
         return false;
     }
