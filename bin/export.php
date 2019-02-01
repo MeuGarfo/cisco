@@ -1,8 +1,5 @@
 <?php
-require './basic/basic.php';
-inc([
-    'backup'
-]);
 $filename=ROOT.'backup.sql';
 print 'exportando DB para o arquivo backup.sql...'.PHP_EOL;
-export($filename);
+system('mysqldump -u root -p cisco > "'.ROOT.'backup.sql"');
+print 'banco de dados exportado com sucesso!'.PHP_EOL;
