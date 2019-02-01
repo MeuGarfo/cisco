@@ -8,7 +8,7 @@ $data=[
     'site'=>@$_GET['site'],
     'db'=>$db
 ];
-$site=model('single',$data);
+$site=model('um',$data);
 $data=[
     'title'=>'Cisco',
     'site'=>$site
