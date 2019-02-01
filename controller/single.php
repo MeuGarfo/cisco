@@ -5,9 +5,12 @@ inc([
 ]);
 $db=db();
 $data=[
-    'site'=>@$_POST['site'],
+    'site'=>@$_GET['site'],
     'db'=>$db
 ];
 $site=model('single',$data);
-var_dump($site);
-// ?>
+$data=[
+    'title'=>'Cisco',
+    'site'=>$site
+];
+view('index',$data);
