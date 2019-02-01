@@ -3,6 +3,13 @@ require '../basic/basic.php';
 inc([
     'controller',
     'e',
+    'segment',
     'view',
 ]);
-controller('index');
+$controllerName=segment(1);
+if($controllerName=='/'){
+    $controllerName='index';
+}
+if(!controller($controllerName)){
+    echo '404';
+}
