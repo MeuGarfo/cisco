@@ -4,5 +4,5 @@ inc([
     'backup'
 ]);
 $filename=ROOT.'backup.sql';
-print 'exportando banco de dados...'.PHP_EOL;
+print 'exportando DB para o arquivo backup.sql...'.PHP_EOL;
 export($filename);
