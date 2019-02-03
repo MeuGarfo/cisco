@@ -6,17 +6,12 @@ view("inc/header",$data);
 view('form/dois',$data);
 ?>
 <?php
-var_dump($sitea);
-print '<hr>';
-var_dump($siteb);
 $site=false;
 if(isset($sitea)){
     $site=$sitea;
 }
 if(isset($site) && $site){
-    print '<hr>';
-    print "<h1>{$site['site']}</h1>";
-    print "<p>{$site['ranking']}</p>";
+    print "<h1>{$site['site']} {$site['ranking']}</h1>";
     $date=date('r',$site['date']);
     print "<small>{$date}</small><br>";
 }elseif(isset($sitea) && !$sitea){
@@ -27,8 +22,7 @@ if(isset($siteb)){
 }
 if(isset($site) && $site){
     print '<hr>';
-    print "<h1>{$site['site']}</h1>";
-    print "<p>{$site['ranking']}</p>";
+    print "<h1>{$site['site']} {$site['ranking']}</h1>";
     $date=date('r',$site['date']);
     print "<small>{$date}</small><br>";
 }elseif(isset($siteb) && !$siteb){
