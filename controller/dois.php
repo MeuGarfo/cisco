@@ -4,21 +4,16 @@ inc([
     'model'
 ]);
 if(isset($_GET['sitea'],$_GET['siteb'])){
+    model('site');
     $db=db();
-    $data=[
-        'site'=>@$_GET['sitea'],
-        'db'=>$db
-    ];
-    $sitea=model('um',$data);
-    $data=[
-        'site'=>@$_GET['siteb'],
-        'db'=>$db
-    ];
-    $siteb=model('um',$data);
+    $siteAIn=@$_GET['sitea'];
+    $siteAOut=readSite($db,$siteAIn);
+    $siteBIn=@$_GET['siteb'];
+    $siteBOut=readSite($db,$siteBIn);
     $data=[
         'title'=>'Cisco',
-        'sitea'=>$sitea,
-        'siteb'=>$siteb
+        'sitea'=>$siteAOut,
+        'siteb'=>$siteBOut
     ];
 }else{
     $data=[
