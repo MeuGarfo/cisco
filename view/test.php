@@ -1,3 +1,20 @@
+<?php
+function printData($site,$xyArray){
+    $data=[
+        'type'=>'line',
+        'name'=>$site,
+        'dataPoints'=>$xyArray
+    ];
+    $str=json_encode($data,JSON_PRETTY_PRINT);
+    $str=str_replace('x":"','x":',$str);
+    $str=str_replace('","y',',"y',$str);
+    return $str;
+}
+print '<pre>';
+die(printData('Google',[
+    ['x'=>'new Date(2018,11,30)','y'=>1]
+]));
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -21,22 +38,19 @@
             toolTip: {
                 shared: true
             },
-            data: [{
-                type:"line",
-                name: "Google",
-                dataPoints: [
-                    { x: new Date(2018,11,30), y: 6 },
-                    { x: new Date(2018,11,31), y: 6 }
-                ]
-            },
-            {
-                type: "line",
-                name: "Microsoft",
-                dataPoints: [
-                    { x: new Date(2018,11,30), y: 7 },
-                    { x: new Date(2018,11,31), y: 8 }
-                ]
-            }]
+            data: [
+                <?php
+                printData();
+                ?>
+                {
+                    type: "line",
+                    name: "Microsoft",
+                    dataPoints: [
+                        { x: new Date(2018,11,30), y: 7 },
+                        { x: new Date(2018,11,31), y: 8 }
+                    ]
+                },
+            ]
         });
         chart.render();
 
@@ -50,7 +64,7 @@
         }
 
     }
-</script>
+    </script>
 </head>
 <body>
     <div id="chartContainer" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
