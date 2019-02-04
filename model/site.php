@@ -1,5 +1,5 @@
 <?php
-function readSite($db,$site){
+function readSite($db,$site,$dia){
     $limites=[
         1 =>
         [
@@ -157,7 +157,6 @@ function readSite($db,$site){
             'max' => '32456800',
         ],
     ];
-    $dia=31;
     $limite=$limites[$dia];
     $where=[
         'AND'=>[

@@ -2,7 +2,7 @@
 require '../basic/basic.php';
 inc([
     'db',
-    'error'
+    'error',
+    'view'
 ]);
-error();
-$db=db();
+view("test");
