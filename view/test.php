@@ -1,20 +1,3 @@
-<?php
-function printData($site,$xyArray){
-    $data=[
-        'type'=>'line',
-        'name'=>$site,
-        'dataPoints'=>$xyArray
-    ];
-    $str=json_encode($data,JSON_PRETTY_PRINT);
-    $str=str_replace('x":"','x":',$str);
-    $str=str_replace('","y',',"y',$str);
-    return $str;
-}
-print '<pre>';
-die(printData('Google',[
-    ['x'=>'new Date(2018,11,30)','y'=>1]
-]));
-?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -39,9 +22,6 @@ die(printData('Google',[
                 shared: true
             },
             data: [
-                <?php
-                printData();
-                ?>
                 {
                     type: "line",
                     name: "Microsoft",

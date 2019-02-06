@@ -7,9 +7,6 @@ view('form/sites',$data);
 ?>
 <?php
 if(isset($sitea,$siteb)){
-    print '<pre>';
-    var_export($sitea);
-    print '<hr>';
-    var_export($siteb);
+    view('graph',$data);
 }
 ?>
