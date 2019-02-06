@@ -4,7 +4,7 @@ inc([
     'model'
 ]);
 if(isset($_GET['sitea'],$_GET['siteb'],$_GET['dia'])){
-    model('site');
+    model('sites');
     $db=db();
     $dia=$_GET['dia'];
     $siteAIn=$_GET['sitea'];
@@ -21,4 +21,4 @@ if(isset($_GET['sitea'],$_GET['siteb'],$_GET['dia'])){
         'title'=>'Cisco'
     ];
 }
-view('dois',$data);
+view('index',$data);

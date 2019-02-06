@@ -1,4 +1,4 @@
-<form class="" action="dois" method="GET">
+<form class="" action="sites" method="GET">
     <input type="hidden" name="dia" value="30">
     <input type="text" name="sitea" value="" placeholder="site a"><br>
     <input type="text" name="siteb" value="" placeholder="site b"><br>

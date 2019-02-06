@@ -2,5 +2,5 @@
 $data=[
     'title'=>"Cisco"
 ];
-view('dois',$data);
+view('index',$data);
 ?>
