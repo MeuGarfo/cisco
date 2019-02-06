@@ -3,14 +3,13 @@ inc([
     'db',
     'model'
 ]);
-if(isset($_GET['sitea'],$_GET['siteb'],$_GET['dia'])){
+if(isset($_GET['sitea'],$_GET['siteb'])){
     model('sites');
     $db=db();
-    $dia=$_GET['dia'];
     $siteAIn=$_GET['sitea'];
-    $siteAOut=readSite($db,$siteAIn,$dia);
+    $siteAOut=readSiteMonth($db,$siteAIn);
     $siteBIn=$_GET['siteb'];
-    $siteBOut=readSite($db,$siteBIn,$dia);
+    $siteBOut=readSiteMonth($db,$siteBIn);
     $data=[
         'title'=>'Cisco',
         'sitea'=>$siteAOut,
