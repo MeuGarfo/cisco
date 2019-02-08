@@ -17,16 +17,17 @@ window.onload = function () {
             shared: true
         },
         legend: {
-    cursor: "pointer",
-    verticalAlign: "top",
-    horizontalAlign: "center",
-    dockInsidePlotArea: true,
-    itemclick: toogleDataSeries
-},
+            cursor: "pointer",
+            verticalAlign: "top",
+            horizontalAlign: "center",
+            dockInsidePlotArea: true,
+            itemclick: toogleDataSeries
+        },
         data: [
             <?php
-            print $sitea.','.PHP_EOL.PHP_EOL;
-            print $siteb;
+            foreach ($sites as $key => $value) {
+                print $value.','.PHP_EOL.PHP_EOL;
+            }
             ?>
         ]
     });

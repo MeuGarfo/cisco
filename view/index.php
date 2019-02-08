@@ -6,7 +6,7 @@ view("inc/header",$data);
 view('form/sites',$data);
 ?>
 <?php
-if(isset($sitea,$siteb)){
+if(isset($sites)){
     view('graph',$data);
 }
 ?>

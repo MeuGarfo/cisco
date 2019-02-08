@@ -3,21 +3,28 @@ inc([
     'db',
     'model'
 ]);
-if(isset($_GET['sitea'],$_GET['siteb'])){
-    model('sites');
+
+//data view
+$data=[
+    'title'=>'Cisco'
+];
+
+if(isset($_GET['sites'])){
+    //vars
     $db=db();
-    $siteAIn=$_GET['sitea'];
-    $siteAOut=readSiteMonth($db,$siteAIn);
-    $siteBIn=$_GET['siteb'];
-    $siteBOut=readSiteMonth($db,$siteBIn);
-    $data=[
-        'title'=>'Cisco',
-        'sitea'=>$siteAOut,
-        'siteb'=>$siteBOut
-    ];
-}else{
-    $data=[
-        'title'=>'Cisco'
-    ];
+    $sitesStr=$_GET['sites'];
+    $sitesArr=explode(PHP_EOL,$sitesStr);
+    $sitesArr=array_filter($sitesArr);
+    $data['sitesValue']=implode(PHP_EOL,$sitesArr);
+    $sites=array_values($sitesArr);
+
+    //model
+    model('sites');
+
+    //data view
+    foreach ($sites as $key => $site) {
+        $data['sites']['site'.$key]=readSiteMonth($db,$site);
+    }
 }
+//view
 view('index',$data);
