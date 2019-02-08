@@ -1,7 +1,7 @@
 <?php
 function readSite($db,$site,$dia){
     $limites=require 'inc/limites.php';
-    $dia=$dia-1;
+    //$dia=$dia-1;
     $limite=$limites[$dia];
     $where=[
         'AND'=>[
@@ -21,7 +21,13 @@ function readSiteMonth($db,$site){
     $i=1;
     $pontos=[];
     while ($i<=31) {
-        $pontos[$i++]=readSite($db,$site,$i);
+        $result=readSite($db,$site,$i);
+        if($result){
+            $pontos[$i++]=$result;
+        }else{
+            die($site.' not found');
+        }
+
     }
     return formatMonthJson($site,$pontos);
 }
