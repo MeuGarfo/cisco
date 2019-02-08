@@ -1,7 +1,11 @@
 <?php
 view("inc/header",$data);
 ?>
-<h1><?php e($title); ?></h1>
+<h1>
+    <a href="/">
+        <?php e($title); ?>
+    </a>
+</h1>
 <?php
 view('form/sites',$data);
 ?>

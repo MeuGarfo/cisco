@@ -16,6 +16,7 @@ if(isset($_GET['sites'])){
     $sitesArr=explode(PHP_EOL,$sitesStr);
     $sitesArr=array_filter($sitesArr);
     $sitesArr=array_map('trim', $sitesArr);
+    $sitesArr=array_map('strtolower', $sitesArr);
     $data['sitesValue']=implode(PHP_EOL,$sitesArr);
     $sites=array_values($sitesArr);
 
