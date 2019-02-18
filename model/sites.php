@@ -71,8 +71,8 @@ function formatMonthJson($site,$pontos){
     $str=str_replace('"y": "','y: ',$str);
     $str=str_replace(')"',')',$str);
     $str=str_replace('"
-}','
-}',$str);
+        }','
+        }',$str);
 return $str;
 }
 ?>
