@@ -9,6 +9,7 @@ $data=[
     'title'=>'Cisco'
 ];
 
+//busca multisiete
 if(isset($_GET['sites'])){
     //vars
     $db=db();

@@ -1,4 +1,25 @@
 <?php
+function readSingle($single){
+    $db=db();
+    $limites=require 'inc/limites.php';
+    //$dia=$dia-1;
+    $dia=31;
+    $limite=$limites[$dia];
+    $where=[
+        'AND'=>[
+            'ranking'=>$single,
+            'id[<>]'=>[$limite['min'],$limite['max']]
+        ],
+        'ORDER'=>[
+            'id'=>'ASC'
+        ]
+    ];
+    $cols=[
+        'ranking',
+        'site'
+    ];
+    return @$db->get('sites',$cols,$where);
+}
 function readSite($db,$site,$dia){
     $limites=require 'inc/limites.php';
     //$dia=$dia-1;
@@ -50,8 +71,8 @@ function formatMonthJson($site,$pontos){
     $str=str_replace('"y": "','y: ',$str);
     $str=str_replace(')"',')',$str);
     $str=str_replace('"
-        }','
-        }',$str);
-    return $str;
+}','
+}',$str);
+return $str;
 }
 ?>
