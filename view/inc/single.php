@@ -1,6 +1,8 @@
 <p>
     <?php
-    print $single['ranking'].'. '.$single['site'];
+    $link="http://{$single['site']}";
+    $link='<a target="_blank" href="'.$link.'">http://'.$single['site'].'</a>';
+    print $single['ranking'].'. '.$link;
     ?><br>
     <?php
     $ranking=$single['ranking'];
