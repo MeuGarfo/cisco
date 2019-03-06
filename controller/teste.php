@@ -51,7 +51,7 @@ function httpsOk($url){
 //busca pelo single
 //verifica o status
 //se o status for igual a 200 salva
-//curl "http://cisco.local/teste?single=[1-1000000]" -s
+//curl "http://public.local/teste?single=[1-1000000]" -s -m 1
 set_time_limit(3);
 model("sites");
 $single=$_GET['single'];
