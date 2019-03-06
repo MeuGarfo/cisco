@@ -61,9 +61,9 @@ if(httpOk($url) || httpsOk($url)){
     $filename=ROOT.'sites.txt';
     $data=$single.PHP_EOL;
     file_put_contents($filename,$data,FILE_APPEND);
-    print $single.chr(9).'200 '.$url;
+    print $single.chr(9).$url;
 }else{
     header('HTTP/1.0 404 Not Found');
-    print $single.chr(9).'404 '.$url;
+    echo $single.chr(9).'*******************************************';
 }
 ?>
