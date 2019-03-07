@@ -51,14 +51,14 @@ function httpsOk($url){
 //busca pelo single
 //verifica o status
 //se o status for igual a 200 salva
-//curl "http://public.local/teste?single=[1-1000000]" -s -m 1
+//curl "http://public.local/teste?single=[1-1000000]&name=x" -s -m 1
 set_time_limit(3);
 model("sites");
 $single=$_GET['single'];
 $url=readSingle($single)['site'];
 $url=trim($url);
 if(httpOk($url) || httpsOk($url)){
-    $filename=ROOT.'sites.txt';
+    $filename=ROOT.$_GET['name'].'.txt';
     $data=$single.PHP_EOL;
     file_put_contents($filename,$data,FILE_APPEND);
     print $single.chr(9).$url;
