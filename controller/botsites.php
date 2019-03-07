@@ -52,7 +52,7 @@ function httpsOk($url){
 //verifica o status
 //se o status for igual a 200 salva
 //curl "http://public.local/teste?single=[1-1000000]&name=x" -s -m 1
-set_time_limit(3);
+set_time_limit(0);
 model("sites");
 $single=$_GET['single'];
 $url=readSingle($single)['site'];

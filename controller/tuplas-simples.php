@@ -4,7 +4,7 @@ inc([
     'model'
 ]);
 
-set_time_limit(3);
+set_time_limit(0);
 model("sites");
 
 $sites=file_get_contents(ROOT.'sites.txt');

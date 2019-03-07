@@ -2,7 +2,7 @@ backup.sql de 2.8GB (apenas dez/2018)
 
 sites.txt
 65.8% responderam em 2s [6580 de 10000]
-% são tuplas simples [ de 6580]
+19.2% são tuplas simples [1266 de 6580]
 % são .com.br simples
-% são tuplas simples com www [ de 6580]
+% são tuplas simples com subdominio www ou iso alpha-2 [ de 6580]
 % são .com.br com www [ de 6580]
