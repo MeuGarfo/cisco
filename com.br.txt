@@ -1,0 +1,6 @@
+google.com.br
+uol.com.br
+itau.com.br
+santander.com.br
+bradesco.com.br
+citibank.com.br
